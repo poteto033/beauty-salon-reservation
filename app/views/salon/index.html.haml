@@ -1,4 +1,3 @@
 .salons-all
   -@salons.each do |salon|
-    =link_to "#" do
-      =salon.name
+    =link_to "#{salon.name}",salon_path(salon.id)
