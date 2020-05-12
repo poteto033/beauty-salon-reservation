@@ -8,7 +8,7 @@
 -if @reservation.present?
   %p 予約あり
   %p 店名
-  =@salon.name
+  =@reservation.salon.name
   %p カット
   =@reservation.cut
   %p パーマ
