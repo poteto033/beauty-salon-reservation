@@ -1,1 +1,35 @@
-aa
+%h1
+ユーザー情報
+%p
+  =current_user.nickname
+
+%h2
+予約状況
+-if @reservation.present?
+  %p 予約あり
+  %p 店名
+  =@salon.name
+  %p カット
+  =@reservation.cut
+  %p パーマ
+  =@reservation.pama
+  %p カラーリング
+  =@reservation.color
+  %P 予約日時
+  =@reservation.month
+  月
+  =@reservation.day
+  日
+  =@reservation.hour
+  時
+  =@reservation.minute
+  分
+
+
+-else
+  %p 予約なし
+
+
+
+
+
