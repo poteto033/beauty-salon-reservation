@@ -1,0 +1,22 @@
+.salon-information
+  %p 店舗情報
+  .salon-information_name
+    %p 店名
+    %p
+      =@salon.name
+
+  .salon-information_address
+    %p 住所
+    %p
+      =@salon.postcode 
+      =@salon.prefecture
+      =@salon.city
+      =@salon.block
+      =@salon.building
+
+  .salon-information_phone
+    %p お問い合わせ先
+    %p
+      =@salon.phone_number
+
+=link_to "予約する",new_salon_reservation_path(@salon.id)
