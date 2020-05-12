@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20200510222333) do
     t.string "cut", null: false
     t.string "pama", null: false
     t.string "color", null: false
-    t.integer "mounth", null: false
+    t.integer "month", null: false
     t.integer "day", null: false
     t.integer "hour", null: false
     t.integer "minute", null: false
-    t.integer "price", null: false
+    t.integer "price"
     t.bigint "user_id", null: false
     t.bigint "salon_id", null: false
     t.datetime "created_at", null: false
