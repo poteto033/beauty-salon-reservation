@@ -22,13 +22,13 @@ ruby 2.5.1
 - 予約内容を編集やキャンセルする機能
 
 # イントール
-$ gem i -v 5.1.0 rails
-$ git clone https://github.com/poteto033/beauty-salon-reservation
-$ rails db:create
-$ rails db:migrate
-$ rails db:seed
-$ bundle install
-$ rails s
+1. $ gem i -v 5.1.0 rails
+2. $ git clone https://github.com/poteto033/beauty-salon-reservation
+3. $ rails db:create
+4. $ rails db:migrate
+5. $ rails db:seed
+6. $ bundle install
+7. $ rails s
 
 # 使い方
 1. トップページの上部にあるログインボタンよりログインが出来ます。
