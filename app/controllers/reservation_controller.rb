@@ -1,11 +1,12 @@
 class ReservationController < ApplicationController
   def new
-    if user_signed_in? 
+    @reservationed=Reservation.where(user_id: current_user.id).count
+    if @reservationed==1
+      redirect_to user_path(current_user)
+    else
       @salon=Salon.find(params[:salon_id])
       @reservation=Reservation.new
-    else
-      redirect_to new_user_session_path
-      
+
     end
   end
 
@@ -17,6 +18,12 @@ class ReservationController < ApplicationController
     else
       render :new 
     end
+  end
+
+  def destroy
+    @reservation=Reservation.find_by(user_id: current_user.id)
+    @reservation.destroy
+    redirect_to root_path
   end
 
   private
