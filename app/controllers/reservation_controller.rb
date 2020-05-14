@@ -14,16 +14,16 @@ class ReservationController < ApplicationController
     @reservation=Reservation.new(reservation_params)
 
     if @reservation.save
-      redirect_to root_path
+      redirect_to root_path,notice: '予約完了しました'
     else
-      render :new 
+      render :new
     end
   end
 
   def destroy
     @reservation=Reservation.find_by(user_id: current_user.id)
     @reservation.destroy
-    redirect_to root_path
+    redirect_to root_path,notice: '予約をキャンセルしました'
   end
 
   private
