@@ -3,20 +3,29 @@
     = f.label :メンズorレディース
     %br/
     = f.select :gender, [["メンズ", "メンズ"],["レディーズ","レディース"]], {include_blank: "選択してください"}
+    -if @reservation.errors[:gender].any?
+      %p.error_message 選択してください
+
   .cut
     = f.label :カット（希望されない場合はカットなしを選択してください）　
     %br/
     = f.select :cut, [["カットなし","カットなし"],["ロング", "ロング"],["ミディアム","ミディアム"],["ショート","ショート"],["ベリーショート","ベリーショート"]], {include_blank: "選択してください"}
-  
+    -if @reservation.errors[:cut].any?
+      %p.error_message 選択してください
+
   .pama
     = f.label :パーマ（希望されない場合はパーマなしを選択してください））
     %br/
     = f.select :pama, [["パーマなし","パーマなし"],["ストレート", "ストレート"],["コールド","コールド"],["デジタル","デジタル"],["クリープ","クリープ"]], {include_blank: "選択してください"}
-
+    -if @reservation.errors[:pama].any?
+      %p.error_message 選択してください
+      
   .color
     = f.label :カラーリング（希望されない場合はカラーなしを選択してください）
     %br/
     = f.select :color, [["カラーなし","カラーなし"],["白髪染め", "白髪染め"],["ベーシックカラー","ベーシックカラー"],["デザインカラー","デザインカラー"],["リタッチカラー","リタッチカラー"]], {include_blank: "選択してください"}
+    -if @reservation.errors[:color].any?
+      %p.error_message 選択してください
   
   .reservation-date
     = f.label :予約日（毎月29〜31日は定休日です）
@@ -29,6 +38,8 @@
     時
     =f.select :minute,[["00","00"],["30","30"]],{include_blank: "選択してください"}
     分
+    -if @reservation.errors[:month].any?||@reservation.errors[:day].any?||@reservation.errors[:hour].any?||@reservation.errors[:minute].any?
+      %p.error_message 予約月・日・時・分をそれぞれ選択してください
 
   .submit
     =f.submit "予約する"
